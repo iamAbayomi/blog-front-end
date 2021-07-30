@@ -79,6 +79,11 @@ export default class  App extends React.Component {
         <div className="blog-list">
             <Singleblog post= {this.state.post}/>
         </div>
+        <div className="options-button">
+          <button className="white-button">Edit</button>
+          <button className="red-button">Delete</button>
+        </div>
+
           <div className="comments-box">
               <h4>Leave a Reply</h4>
               <div className="Name">
@@ -89,7 +94,7 @@ export default class  App extends React.Component {
                   <p>Message</p>
                   <textarea className="input-field message-field" placeholder="Enter this Message" value={this.state.comments.comment_message} onChange={this.handleCommentMessageChanged.bind(this)}/>
               </div>
-              <button className="blue-button" onClick={this.sendComment.bind(this)}> Submit </button>
+              <button className="black-button" onClick={this.sendComment.bind(this)}> Submit </button>
           </div>
           {this.state.comments ?
           <div>
