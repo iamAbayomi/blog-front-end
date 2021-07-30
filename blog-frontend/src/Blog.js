@@ -30,14 +30,14 @@ function App() {
           </p>
         </div>
         <div className="comments-box">
-            <p>Leave a Reply</p>
+            <h2>Leave a Reply</h2>
             <div className="Name">
                 <p>Name</p>
-                <input className="Name" placeholder="Enter this Name"/>
+                <input className="input-field" placeholder="Enter this Name"/>
             </div>
             <div className="Message">
                 <p>Message</p>
-                <input className="Name" placeholder="Enter this Message"/>
+                <input className="input-field" placeholder="Enter this Message"/>
             </div>
             <button type="button"> Submit </button>
         </div>

@@ -1,3 +1,5 @@
+import './App.css';
+
 function Post(){
     return(
         <div className="App">
