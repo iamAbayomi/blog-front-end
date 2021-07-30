@@ -48,6 +48,23 @@ export default class  App extends React.Component {
     
   }
 
+
+  
+  editPost(){
+
+  }
+
+  deletePost(){
+    axios.delte(`https://stark-falls-30261.herokuapp.com/apis/post/32`)
+    .then((res) => {
+      console.log('This is the data', res.data)
+      this.forceUpdate()
+    })
+    .catch((err) => {
+      console.log(err)
+    }) 
+  }
+  
   
   handleCommentNameChanged(event ){
     var comment = this.state.comment
@@ -71,7 +88,7 @@ export default class  App extends React.Component {
           console.log(err)
         })
   }
-  
+
   render(){
     return (
       <div className="App">
