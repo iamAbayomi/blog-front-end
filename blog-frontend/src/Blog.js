@@ -30,24 +30,24 @@ function App() {
           </p>
         </div>
         <div className="comments-box">
-            <h2>Leave a Reply</h2>
+            <h4>Leave a Reply</h4>
             <div className="Name">
                 <p>Name</p>
                 <input className="input-field" placeholder="Enter this Name"/>
             </div>
             <div className="Message">
                 <p>Message</p>
-                <input className="input-field" placeholder="Enter this Message"/>
+                <textarea className="input-field message-field" placeholder="Enter this Message"/>
             </div>
-            <button type="button"> Submit </button>
+            <button className="blue-button"> Submit </button>
         </div>
 
         <p> 10 comments</p>
 
         <div>
-            <p>Oladini Abayomi</p>
-            <p>Wed Jan 13 2021 14:05:35 GMT+0100 (West Africa Standard Time)</p>
-            <p> Great Content but miro is hard is to use</p>
+            <p className="comments-name">Oladini Abayomi</p>
+            <p className="comments-date info-label" >Wed Jan 13 2021 14:05:35 GMT+0100 (West Africa Standard Time)</p>
+            <p className="comments-message" > Great Content but miro is hard is to use</p>
         </div>
         
     </div>
