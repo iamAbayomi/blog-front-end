@@ -1,0 +1,35 @@
+.App {
+  text-align: left;
+  margin: auto;
+  max-width: 320px;
+}
+
+.blog-header{
+  margin: 20px 0px 60px 0px ;
+}
+
+.add-blogpost{
+  width: 30px;
+  position: fixed;
+  bottom: 5%;
+  right: 5%;
+}
+
+.blog-list{
+  margin: 20px 0px 40px 0px ;
+}
+
+/* Small Breakpoint */
+@media screen and (min-width: 580px){
+  .App {
+    max-width: 550px;
+  }
+  
+}
+
+/* Large Breakpoint */
+@media screen and (min-width: 1000px){
+  .App {
+    max-width: 950px;
+  } 
+}
