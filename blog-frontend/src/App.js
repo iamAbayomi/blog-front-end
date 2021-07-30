@@ -7,13 +7,18 @@ import Bloglist from './component/Bloglist'
 export default class App extends React.Component{
 
   state = {
-    post: ''
+    post: []
   }
 
   componentDidMount(){
     axios.get('https://stark-falls-30261.herokuapp.com/apis/post/1')
     .then((res)=> {
       console.log('This is the data', res)
+      this.setState(
+        {
+          post: res.data
+        }
+      )
     })
     .catch((err)=>{
       console.log(err)
