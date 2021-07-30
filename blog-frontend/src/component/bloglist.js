@@ -1,6 +1,6 @@
 import React from 'react'
 
-export default class Headline extends React.Component {
+export default class Bloglist extends React.Component {
     
     reducePostlength(post_description){
         return post_description.substring(0, 400)
