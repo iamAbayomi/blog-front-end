@@ -4,6 +4,7 @@ import axios from 'axios'
 import React from 'react'
 import Blog from './Blog'
 import Post from './Post'
+import Main from './component/Main'
 import {
   BrowserRouter as Router,
   Switch,
@@ -12,7 +13,7 @@ import {
   BrowserRouter
 } from "react-router-dom";
 
-import Bloglist from './component/Bloglist'
+import Bloglist from './Main.js/Bloglist'
 
 export default class App extends React.Component{
 
@@ -37,16 +38,19 @@ export default class App extends React.Component{
 
 render() {
   return (
-    <BrowserRouter>
+    <Router>
     <div className="App">
-      <h1 className="blog-header"> Mini Blog Posts </h1>
-        <Link className="text-Link" to="/blog"><Bloglist post={this.state.post} /></Link>
+        
+        <h1 className="blog-header"> Mini Blog Posts </h1> 
+        
+        <Link className="text-link" to="/blog"><Bloglist post={this.state.post} /></Link>
 
-        <Link className="text-Link" to="/post" > 
+        <Link className="text-link" to="/post" > 
             <img className="add-blogpost" src="blue_plus.svg"/>
         </Link>
 
         <Switch>
+        <Route exact path="/" component={Main} />
             <Route path="/blog">
                 <Blog />
             </Route>
@@ -56,8 +60,10 @@ render() {
         </Switch>
       
     </div>
-    </BrowserRouter>
+    </Router>
   );
 }
 
 }
+
+
