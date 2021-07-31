@@ -28,7 +28,7 @@ export default class CreateAccount extends React.Component{
     
       handleuserPaswordChanged(event){
         var user = this.state.user
-        user.email = event.target.value
+        user.password = event.target.value
         this.setState({user: user})
       }
     
@@ -43,9 +43,9 @@ export default class CreateAccount extends React.Component{
             </div>
             <div className="pasword">
                 <p>Password</p>
-                <input className="input-field" placeholder="Password" value={this.state.user.password} onChange={this.handleuserPaswordChanged(this)} />
+                <input className="input-field" type="password" placeholder="Password" value={this.state.user.password} onChange={this.handleuserPaswordChanged.bind(this)} />
             </div>
-            <button className="blue-button" onClick={this.createAccount.bind(this)}> Submit </button>
+            <button className="black-button" onClick={this.createAccount.bind(this)}> Submit </button>
         </div>
     )}
 }
