@@ -1,16 +1,20 @@
 import React from 'react'
+import { useHistory } from 'react-router-dom'
 
-export default class Bloglist extends React.Component {
+function Bloglist(props){
+    const history = useHistory()
+    // function reducePostlength(post_description){
+    //     return post_description.substring(0, 400)
+    // }
     
-    reducePostlength(post_description){
-        return post_description.substring(0, 400)
+    function goToBlogPost(){
+      history.push('/blog')
     }
-    
-    render(){
+  
         return(
             <div>
-                {this.props.post.map((post) =>(
-                    <div className="blog-list">
+                {props.post.map((post) =>(
+                    <div className="blog-list" onClick={goToBlogPost}>
                         <h3>{post.post_title}</h3>
                         {/* <p>12-10-17 10 comments 5.5 ratings</p> */}
                         <p>{post.post_createdAt}</p>
@@ -24,6 +28,8 @@ export default class Bloglist extends React.Component {
             </div>
 
         )
-    }
+
 
 }
+
+export default Bloglist
