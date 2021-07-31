@@ -1,8 +1,9 @@
+/* eslint-disable jsx-a11y/anchor-is-valid */
 import React from 'react';
 import './App.css';
 import axios from 'axios'
 import Comment from './component/Comment';
-import Singleblog from './component/Singleblog'
+import Singleblog from './component/Singleblog';
 
 export default class  App extends React.Component {
   
@@ -13,7 +14,12 @@ export default class  App extends React.Component {
         comment_name: '',
         comment_message: '',
         post_id: 3
-    }
+    },
+    rating: {
+      rating_value : '',
+      post_id: 2
+    },
+    avg_rating: ''
     
   }
 
@@ -96,9 +102,26 @@ export default class  App extends React.Component {
         })
   }
 
+  createRating(){
+    axios.post(`https://stark-falls-30261.herokuapp.com/apis/ratings/`, this.state.comment)
+        .then((res) => {
+          console.log('This is the data', res.data)
+          this.forceUpdate()
+        })
+        .catch((err) => {
+          console.log(err)
+        })
+  }
+
   render(){
     return (
       <div className="App">
+        {/* <head>
+          <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.1/css/bootstrap.min.css"/>
+          <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
+          <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.1/js/bootstrap.min.js"></script>
+        </head> */}
+
         <h1 className="blog-header"> Mini Blog Posts </h1>
         <div className="blog-list">
             <Singleblog post= {this.state.post}/>
@@ -106,7 +129,19 @@ export default class  App extends React.Component {
         <div className="options-button">
           <button className="white-button" onClick={this.editPost.bind(this)}>Edit</button>
           <button className="red-button" onClick={this.deletePost.bind(this)}> Delete</button>
+          <div className="dropdown">
+              <button className="btn btn-primary dropdown-toggle" type="button" data-toggle="dropdown">Rate the Post
+              <span className="caret"></span></button>
+              <ul className="dropdown-menu">
+                <li><a href="#">5</a></li>
+                <li><a href="#">4</a></li>
+                <li><a href="#">3</a></li>
+                <li><a href="#">2</a></li>
+                <li><a href="#">1</a></li>
+              </ul>
+  </div>
         </div>
+
 
           <div className="comments-box">
               <h4>Leave a Reply</h4>
