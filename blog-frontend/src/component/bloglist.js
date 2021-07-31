@@ -15,7 +15,8 @@ export default class Bloglist extends React.Component {
                         {/* <p>12-10-17 10 comments 5.5 ratings</p> */}
                         <p>{post.post_createdAt}</p>
                         <p>
-                            {this.reducePostlength(post.post_description)}
+                            {/* {this.reducePostlength(post.post_description)} */}
+                            {post.post_description}
                         </p>
                     </div>
 

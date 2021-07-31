@@ -2,6 +2,16 @@
 import './App.css';
 import axios from 'axios'
 import React from 'react'
+import Blog from './Blog'
+import Post from './Post'
+import {
+  BrowserRouter as Router,
+  Switch,
+  Route,
+  Link,
+  BrowserRouter
+} from "react-router-dom";
+
 import Bloglist from './component/Bloglist'
 
 export default class App extends React.Component{
@@ -27,15 +37,26 @@ export default class App extends React.Component{
 
 render() {
   return (
+    <BrowserRouter>
     <div className="App">
       <h1 className="blog-header"> Mini Blog Posts </h1>
-      <Bloglist post={this.state.post} />
-        
+        <Link className="text-Link" to="/blog"><Bloglist post={this.state.post} /></Link>
 
-      
-        <img className="add-blogpost" src="blue_plus.svg"/>
+        <Link className="text-Link" to="/post" > 
+            <img className="add-blogpost" src="blue_plus.svg"/>
+        </Link>
+
+        <Switch>
+            <Route path="/blog">
+                <Blog />
+            </Route>
+            <Route path="/post">
+                  <Post/>
+            </Route>
+        </Switch>
       
     </div>
+    </BrowserRouter>
   );
 }
 
