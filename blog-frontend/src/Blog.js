@@ -51,11 +51,18 @@ export default class  App extends React.Component {
 
   
   editPost(){
-
+    axios.put(`https://stark-falls-30261.herokuapp.com/apis/post/32`)
+    .then((res) => {
+      console.log('This is the data', res.data)
+      this.forceUpdate()
+    })
+    .catch((err) => {
+      console.log(err)
+    }) 
   }
 
   deletePost(){
-    axios.delte(`https://stark-falls-30261.herokuapp.com/apis/post/32`)
+    axios.delete(`https://stark-falls-30261.herokuapp.com/apis/post/32`)
     .then((res) => {
       console.log('This is the data', res.data)
       this.forceUpdate()
@@ -97,8 +104,8 @@ export default class  App extends React.Component {
             <Singleblog post= {this.state.post}/>
         </div>
         <div className="options-button">
-          <button className="white-button">Edit</button>
-          <button className="red-button">Delete</button>
+          <button className="white-button" onClick={this.editPost.bind(this)}>Edit</button>
+          <button className="red-button" onClick={this.deletePost.bind(this)}> Delete</button>
         </div>
 
           <div className="comments-box">
