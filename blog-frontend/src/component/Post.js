@@ -6,7 +6,7 @@ export default class  Post extends React.Component {
     state ={
         post: {
             post_title: '',
-            post_message: '',
+            post_description: '',
             user_id: 1
         }
     }
@@ -25,7 +25,7 @@ export default class  Post extends React.Component {
 
     handlePostMessageChanged(event){ 
         var post = this.state.post
-        post.post_message = event.target.value
+        post.post_description = event.target.value
         this.setState({post : post})
     }
 
@@ -56,9 +56,9 @@ export default class  Post extends React.Component {
             </div>
             <div className="Message">
                 <p>Message</p>
-                <textarea className="input-field message-field" placeholder="Enter this Message" value={this.state.post.post_message} onChange={this.handlePostMessageChanged.bind(this)} />
+                <textarea className="input-field message-field" placeholder="Enter this Message" value={this.state.post.post_description} onChange={this.handlePostMessageChanged.bind(this)} />
             </div>
-            <button className="blue-button" onClick={this.sendPost} > Submit </button>
+            <a className="no-text" href="/"> <button className="blue-button" onClick={this.sendPost} > Submit </button> </a>
         </div>
     )
 }}

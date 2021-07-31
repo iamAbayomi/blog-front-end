@@ -24,7 +24,9 @@ export default class Blog extends React.Component {
     
   }
 
+
   componentDidMount(){
+    console.log('checkpoint',this.props)
     axios.get('https://stark-falls-30261.herokuapp.com/apis/post/userpost/3')
     .then((res)=> {
       console.log('This is the data', res)

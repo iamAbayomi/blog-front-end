@@ -4,6 +4,7 @@ import './App.css';
 import React from 'react'
 import Blog from './component/Blog'
 import Main from './component/Main'
+import Post from './component/Post'
 
 import {
   BrowserRouter as Router,
@@ -26,7 +27,8 @@ render() {
       </div>
       <Switch>
         <Route exact path="/" component={Main} />
-        <Route exact path="/blog" component={Blog} />
+        <Route exact path="/:slug" component={Blog} />
+        <Route exact path="/post" component={Post} />
       </Switch>
 
       </div>

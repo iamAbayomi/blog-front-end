@@ -38,7 +38,7 @@ render() {
     <div className="App">
       <h1 className="blog-header"> Mini Blog Posts </h1>
         <Bloglist post={this.state.post}  />
-            <img className="add-blogpost" src="blue_plus.svg"/>
+        <a className="no-text" href="/post">   <img className="add-blogpost" src="blue_plus.svg"/> </a>
     </div>
 
   );
