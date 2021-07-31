@@ -2,8 +2,8 @@
 import React from 'react';
 import './App.css';
 import axios from 'axios'
-import Comment from './component/Comment';
-import Singleblog from './component/Singleblog';
+import Comment from './Comment';
+import Singleblog from './Singleblog';
 import { useHistory } from 'react-router-dom';
 
 export default class Blog extends React.Component {

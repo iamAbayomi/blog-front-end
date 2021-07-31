@@ -2,9 +2,9 @@
 import './App.css';
 import axios from 'axios'
 import React from 'react'
-import Bloglist from './Bloglist';
+import Bloglist from './component/Bloglist'
 
-export default class Main extends React.Component{
+export default class App extends React.Component{
 
   state = {
     post: []
@@ -45,3 +45,4 @@ render() {
 }
 
 }
+

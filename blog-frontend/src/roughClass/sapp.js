@@ -54,7 +54,7 @@ render() {
             <Route path="/blog">
                 <Blog />
             </Route>
-            <Route path="/post">
+            <Route path="/:post">
                   <Post/>
             </Route>
         </Switch>
