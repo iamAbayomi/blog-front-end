@@ -27,8 +27,8 @@ render() {
       </div>
       <Switch>
         <Route exact path="/" component={Main} />
-        <Route exact path="/:slug" component={Blog} />
         <Route exact path="/post" component={Post} />
+        <Route exact path="/:slug" component={Blog} />
       </Switch>
 
       </div>
