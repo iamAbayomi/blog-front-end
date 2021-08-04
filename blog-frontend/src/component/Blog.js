@@ -71,7 +71,7 @@ export default class Blog extends React.Component {
   }
 
   deletePost(){
-    axios.delete(`https://stark-falls-30261.herokuapp.com/apis/post/32`)
+    axios.delete(`https://stark-falls-30261.herokuapp.com/apis/post/34`)
     .then((res) => {
       console.log('This is the data', res.data)
       this.forceUpdate()
