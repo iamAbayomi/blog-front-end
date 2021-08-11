@@ -121,7 +121,7 @@ export default class Blog extends React.Component {
         </div>
         <div className="options-button">
           <button className="white-button" onClick={this.editPost.bind(this)}>Edit</button>
-          <button className="red-button" onClick={this.deletePost.bind(this)}> Delete</button>
+          <button className="black-button" onClick={this.deletePost.bind(this)}> Delete</button>
           <div className="dropdown">
               <button className="btn btn-primary dropdown-toggle" type="button" data-toggle="dropdown">Rate the Post
               <span className="caret"></span></button>
