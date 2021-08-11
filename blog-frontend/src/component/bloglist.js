@@ -1,4 +1,6 @@
+import './App.css';
 import React from 'react'
+
 
 export default class Bloglist extends React.Component{
     
@@ -11,6 +13,7 @@ export default class Bloglist extends React.Component{
         return(
             <div>
                 {this.props.post.map((post) =>(
+                    <a className="link" href={post.post_title}>
                     <div className="blog-list" >
                         <h3>{post.post_title}</h3>
                         {/* <p>12-10-17 10 comments 5.5 ratings</p> */}
@@ -20,7 +23,7 @@ export default class Bloglist extends React.Component{
                             {/* {post.post_description} */}
                         </p>
                     </div>
-
+                    </a>
                 ))}
             </div>
 
