@@ -13,7 +13,7 @@ export default class Bloglist extends React.Component{
         return(
             <div>
                 {this.props.post.map((post) =>(
-                    <a className="link" href={post.post_title}>
+                <a className="link" href={post.post_id}>
                     <div className="blog-list" >
                         <h3>{post.post_title}</h3>
                         {/* <p>12-10-17 10 comments 5.5 ratings</p> */}
@@ -23,7 +23,7 @@ export default class Bloglist extends React.Component{
                             {/* {post.post_description} */}
                         </p>
                     </div>
-                    </a>
+                </a>
                 ))}
             </div>
 

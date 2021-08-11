@@ -26,8 +26,8 @@ export default class Blog extends React.Component {
 
 
   componentDidMount(){
-    console.log('checkpoint',this.props)
-    axios.get('https://stark-falls-30261.herokuapp.com/apis/post/userpost/3')
+    console.log('checkpoint',this.props.match.params.slug)
+    axios.get(`https://stark-falls-30261.herokuapp.com/apis/post/userpost/${this.props.match.params.slug}`)
     .then((res)=> {
       console.log('This is the data', res)
       this.setState(
@@ -41,7 +41,7 @@ export default class Blog extends React.Component {
     })
 
 
-    axios.get('https://stark-falls-30261.herokuapp.com/apis/comment/3')
+    axios.get(`https://stark-falls-30261.herokuapp.com/apis/comment/${this.props.match.params.slug}`)
     .then((res)=> {
       console.log('This is the data', res)
       this.setState(
@@ -60,7 +60,7 @@ export default class Blog extends React.Component {
 
   
   editPost(){
-    axios.put(`https://stark-falls-30261.herokuapp.com/apis/post/32`)
+    axios.put(`https://stark-falls-30261.herokuapp.com/apis/post/${this.props.match.params.slug}`)
     .then((res) => {
       console.log('This is the data', res.data)
       this.forceUpdate()
@@ -71,7 +71,7 @@ export default class Blog extends React.Component {
   }
 
   deletePost(){
-    axios.delete(`https://stark-falls-30261.herokuapp.com/apis/post/34`)
+    axios.delete(`https://stark-falls-30261.herokuapp.com/apis/post/${this.props.match.params.slug}`)
     .then((res) => {
       console.log('This is the data', res.data)
       this.forceUpdate()
@@ -119,13 +119,9 @@ export default class Blog extends React.Component {
   render(){
     return (
       <div className="App">
-        {/* <head>
-          <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.1/css/bootstrap.min.css"/>
-          <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
-          <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.1/js/bootstrap.min.js"></script>
-        </head> */}
-
+       <a href="/" className="link">
         <h1 className="blog-header"> Mini Blog Posts </h1>
+        </a>
         <div className="blog-list">
             <Singleblog post= {this.state.post}/>
         </div>
