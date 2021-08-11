@@ -60,17 +60,7 @@ export default class Blog extends React.Component {
 
   
   editPost(){
-    
     this.props.history.push(`/edit/${this.props.match.params.slug}`)
-
-    // axios.put(`https://stark-falls-30261.herokuapp.com/apis/post/${this.props.match.params.slug}`)
-    // .then((res) => {
-    //   console.log('This is the data', res.data)
-    //   this.forceUpdate()
-    // })
-    // .catch((err) => {
-    //   console.log(err)
-    // }) 
   }
 
   deletePost(){
