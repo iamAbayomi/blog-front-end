@@ -14,11 +14,11 @@ export default class Blog extends React.Component {
     comment: {
         comment_name: '',
         comment_message: '',
-        post_id: 3
+        post_id: this.props.match.params.slug
     },
     rating: {
       rating_value : '',
-      post_id: 2
+      post_id: this.props.match.params.slug
     },
     avg_rating: ''
     
@@ -26,7 +26,7 @@ export default class Blog extends React.Component {
 
 
   componentDidMount(){
-    console.log('checkpoint',this.props.match.params.slug)
+    console.log('checkpoint',this.props)
     axios.get(`https://stark-falls-30261.herokuapp.com/apis/post/userpost/${this.props.match.params.slug}`)
     .then((res)=> {
       console.log('This is the data', res)
@@ -60,21 +60,25 @@ export default class Blog extends React.Component {
 
   
   editPost(){
-    axios.put(`https://stark-falls-30261.herokuapp.com/apis/post/${this.props.match.params.slug}`)
-    .then((res) => {
-      console.log('This is the data', res.data)
-      this.forceUpdate()
-    })
-    .catch((err) => {
-      console.log(err)
-    }) 
+    
+    this.props.history.push(`/edit/${this.props.match.params.slug}`)
+
+    // axios.put(`https://stark-falls-30261.herokuapp.com/apis/post/${this.props.match.params.slug}`)
+    // .then((res) => {
+    //   console.log('This is the data', res.data)
+    //   this.forceUpdate()
+    // })
+    // .catch((err) => {
+    //   console.log(err)
+    // }) 
   }
 
   deletePost(){
     axios.delete(`https://stark-falls-30261.herokuapp.com/apis/post/${this.props.match.params.slug}`)
     .then((res) => {
       console.log('This is the data', res.data)
-      this.forceUpdate()
+      this.props.history.goBack()
+      
     })
     .catch((err) => {
       console.log(err)
@@ -98,7 +102,7 @@ export default class Blog extends React.Component {
     axios.post(`https://stark-falls-30261.herokuapp.com/apis/comment/`, this.state.comment)
         .then((res) => {
           console.log('This is the data', res.data)
-          this.forceUpdate()
+          window.location.reload()
         })
         .catch((err) => {
           console.log(err)
