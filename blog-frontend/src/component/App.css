@@ -85,6 +85,10 @@
   transition: 0.3s;
 }
 
+.comments-box{
+  margin: 60px 0px 0px 0px;
+}
+
 .comments-name{
   font-weight: 500;
 }

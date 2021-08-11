@@ -122,7 +122,7 @@ export default class Blog extends React.Component {
         <div className="options-button">
           <button className="white-button" onClick={this.editPost.bind(this)}>Edit</button>
           <button className="black-button" onClick={this.deletePost.bind(this)}> Delete</button>
-          <div className="dropdown">
+          {/* <div className="dropdown">
               <button className="btn btn-primary dropdown-toggle" type="button" data-toggle="dropdown">Rate the Post
               <span className="caret"></span></button>
               <ul className="dropdown-menu">
@@ -132,7 +132,7 @@ export default class Blog extends React.Component {
                 <li><a href="#">2</a></li>
                 <li><a href="#">1</a></li>
               </ul>
-          </div>
+          </div> */}
         </div>
 
 
