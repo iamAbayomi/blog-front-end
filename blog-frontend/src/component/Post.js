@@ -35,10 +35,7 @@ export default class  Post extends React.Component {
         axios.post(`https://stark-falls-30261.herokuapp.com/apis/post/`, this.state.post)
         .then((res) => {
           console.log('This is the data', res.data)
-          this.setState({
-            headlines : res.data.hits
-          })
-    
+          this.props.history.push('/')
         })
         .catch((err) => {
           console.log(err)
@@ -58,7 +55,7 @@ export default class  Post extends React.Component {
                 <p>Message</p>
                 <textarea className="input-field message-field" placeholder="Enter this Message" value={this.state.post.post_description} onChange={this.handlePostMessageChanged.bind(this)} />
             </div>
-            <a className="no-text" href="/"> <button className="blue-button" onClick={this.sendPost} > Submit </button> </a>
+             <button className="blue-button" onClick={this.sendPost} > Submit </button>
         </div>
     )
 }}
