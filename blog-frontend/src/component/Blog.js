@@ -134,8 +134,7 @@ export default class Blog extends React.Component {
               </ul>
           </div> */}
         </div>
-
-
+        <p>Ratings</p>
           <div className="comments-box">
               <h4>Leave a Reply</h4>
               <div className="Name">

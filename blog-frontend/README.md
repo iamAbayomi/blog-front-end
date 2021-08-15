@@ -1,5 +1,7 @@
 # Getting Started with Create React App
 
+You can check the project at [https://swift-user-dashboard.netlify.app/](https://swift-user-dashboard.netlify.app/)
+
 This project was bootstrapped with [Create React App](https://github.com/facebook/create-react-app).
 
 ## Available Scripts
